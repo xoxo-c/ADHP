@@ -14,6 +14,10 @@ public class PlayerMovement : MonoBehaviour
     public float groundDistance = 0.4f;
     public LayerMask groundMask;
 
+    private bool _doublejump = false;
+    
+    public float _doublejumpMult = 0.5f; 
+
     Vector3 velocity;
     bool isGrounded;
     void Start()
@@ -44,7 +48,15 @@ public class PlayerMovement : MonoBehaviour
         //jump
         if(Input.GetButtonDown("Jump")&& isGrounded)
         {
+            _doublejump = true;
             velocity.y = Mathf.Sqrt(jumpHeight * -2f * gravity);
+        } else
+        {
+            if(Input.GetButtonDown("Jump") && _doublejump)
+            {
+                velocity.y = Mathf.Sqrt(jumpHeight * -2f * gravity) * _doublejumpMult;
+                _doublejump = false;
+            }
         }
         #endregion
 

@@ -1190,6 +1190,7 @@ MonoBehaviour:
   groundMask:
     serializedVersion: 2
     m_Bits: 8
+  _doublejumpMult: 0.5
 --- !u!114 &1729257050
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -1203,7 +1204,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   dashSpeed: 1
-  dashTime: 0.25
+  dashTime: 0.15
 --- !u!1 &1848154815
 GameObject:
   m_ObjectHideFlags: 0
